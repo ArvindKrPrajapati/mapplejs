@@ -8,7 +8,7 @@ A framework to build api faster than and easier to maintain.
 
 npx mapple <app-name>
 
-# or
+### or
 
 yarn create mapple <app-name>
 
@@ -16,7 +16,7 @@ yarn create mapple <app-name>
 
 npm run dev
 
-# or
+### or
 
 yarn dev
 
