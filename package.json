@@ -1,0 +1,23 @@
+{
+  "name": "mapplejs",
+  "version": "1.0.3",
+  "description": "A fastify framework",
+  "keywords": [
+    "cli",
+    "mapplejs",
+    "fastify",
+    "framework"
+  ],
+  "main": "index.js",
+  "bin": {
+    "mapple": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arvind Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^13.1.0"
+  }
+}
