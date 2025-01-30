@@ -1,5 +1,5 @@
+import SequelizeService from "./common/sequelize-service";
 import serviceInit from "./common/serviceInit";
-import { ServiceMethods } from "./types";
-export type { ServiceMethods };
-
-export { serviceInit };
+import { ServiceMethods, SequelizeServiceMethods } from "./types";
+export type { ServiceMethods, SequelizeServiceMethods };
+export { serviceInit, SequelizeService };

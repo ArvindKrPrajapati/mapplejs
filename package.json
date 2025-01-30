@@ -1,11 +1,12 @@
 {
   "name": "mapplejs",
-  "version": "0.0.3",
+  "version": "0.0.8",
   "description": "A fastify framework",
   "keywords": [
     "mapplejs",
     "fastify",
-    "framework"
+    "framework",
+    "express"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

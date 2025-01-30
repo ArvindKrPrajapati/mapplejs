@@ -1,7 +1,7 @@
 import { ServiceClass } from "../types";
 
 export default function serviceInit(app: any, Service: ServiceClass) {
-  const service = new Service();
+  const service = new Service(app);
 
   if (service.find) {
     app.get(service.path, async (req: any, res: any) => {
