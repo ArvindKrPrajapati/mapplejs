@@ -1,14 +1,18 @@
+import { FastifyReply, FastifyRequest } from "fastify";
 import { SequelizeServiceMethods } from "../types";
+import { Application } from "../types/fastify";
 
 export default class SequelizeService implements SequelizeServiceMethods {
-  private model: any;
+  model: any;
   path: string = "";
+  app: Application;
 
-  constructor(model: any) {
+  constructor(model: any, app: Application) {
     this.model = model;
+    this.app = app;
   }
 
-  async _find(request: any, response: any) {
+  async _find(request: FastifyRequest, response: FastifyReply) {
     try {
       const query = request.query as any;
       const limit = Number(query["$limit"]) || 20;
@@ -44,7 +48,7 @@ export default class SequelizeService implements SequelizeServiceMethods {
       throw new Error(`Failed to find items: ${error.message}`);
     }
   }
-  async _get(id: string, request: any) {
+  async _get(id: string, request: FastifyRequest, response: FastifyReply) {
     try {
       const item = await this.model.findByPk(id);
       if (!item) {
@@ -55,7 +59,7 @@ export default class SequelizeService implements SequelizeServiceMethods {
       throw new Error(`Failed to get item: ${error.message}`);
     }
   }
-  async _create(data: any, request: any) {
+  async _create(data: any, request: FastifyRequest, response: FastifyReply) {
     try {
       await this.model.create(data);
       return {
@@ -65,7 +69,12 @@ export default class SequelizeService implements SequelizeServiceMethods {
       throw new Error(`Failed to create item: ${error.message}`);
     }
   }
-  async _patch(id: string, data: any, request: any) {
+  async _patch(
+    id: string,
+    data: any,
+    request: FastifyRequest,
+    response: FastifyReply
+  ) {
     try {
       const item = await this.model.findByPk(id);
       if (!item) {
@@ -79,7 +88,7 @@ export default class SequelizeService implements SequelizeServiceMethods {
       throw new Error(`Failed to update item: ${error.message}`);
     }
   }
-  async _delete(id: string, request: any) {
+  async _delete(id: string, request: FastifyRequest, response: FastifyReply) {
     try {
       const item = await this.model.findByPk(id);
       if (!item) {

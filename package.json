@@ -1,12 +1,11 @@
 {
   "name": "mapplejs",
-  "version": "0.0.8",
-  "description": "A fastify framework",
+  "version": "0.0.18",
+  "description": "A fastify web framework",
   "keywords": [
     "mapplejs",
     "fastify",
-    "framework",
-    "express"
+    "framework"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,7 +18,11 @@
   },
   "author": "Arvind Kumar",
   "license": "ISC",
+  "dependencies": {
+    "fastify": "^5.2.1"
+  },
   "devDependencies": {
+    "@types/sequelize": "^4.28.20",
     "typescript": "^5.7.3"
   }
 }
