@@ -1,6 +1,6 @@
 {
   "name": "mapplejs",
-  "version": "0.0.18",
+  "version": "0.0.22",
   "description": "A fastify web framework",
   "keywords": [
     "mapplejs",
@@ -19,9 +19,11 @@
   "author": "Arvind Kumar",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^5.2.1"
+    "fastify": "^5.2.1",
+    "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
+    "@types/lodash.merge": "^4.6.9",
     "@types/sequelize": "^4.28.20",
     "typescript": "^5.7.3"
   }
